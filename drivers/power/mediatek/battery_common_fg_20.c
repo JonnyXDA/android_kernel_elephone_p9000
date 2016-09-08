@@ -585,7 +585,7 @@ static int battery_get_property(struct power_supply *psy,
 		val->intval = data->BAT_CAPACITY;
 		break;
 	case POWER_SUPPLY_PROP_batt_vol:
-		val->intval = data->BAT_batt_vol;
+		val->intval = data->BAT_batt_vol * 1000;
 		break;
 	case POWER_SUPPLY_PROP_batt_temp:
 		val->intval = data->BAT_batt_temp;
@@ -594,22 +594,22 @@ static int battery_get_property(struct power_supply *psy,
 		val->intval = data->BAT_TemperatureR;
 		break;
 	case POWER_SUPPLY_PROP_TempBattVoltage:
-		val->intval = data->BAT_TempBattVoltage;
+		val->intval = data->BAT_TempBattVoltage * 1000;
 		break;
 	case POWER_SUPPLY_PROP_InstatVolt:
-		val->intval = data->BAT_InstatVolt;
+		val->intval = data->BAT_InstatVolt * 1000;
 		break;
 	case POWER_SUPPLY_PROP_BatteryAverageCurrent:
-		val->intval = data->BAT_BatteryAverageCurrent;
+		val->intval = data->BAT_BatteryAverageCurrent * 1000;
 		break;
 	case POWER_SUPPLY_PROP_BatterySenseVoltage:
-		val->intval = data->BAT_BatterySenseVoltage;
+		val->intval = data->BAT_BatterySenseVoltage * 1000;
 		break;
 	case POWER_SUPPLY_PROP_ISenseVoltage:
-		val->intval = data->BAT_ISenseVoltage;
+		val->intval = data->BAT_ISenseVoltage * 1000;
 		break;
 	case POWER_SUPPLY_PROP_ChargerVoltage:
-		val->intval = data->BAT_ChargerVoltage;
+		val->intval = data->BAT_ChargerVoltage * 1000;
 		break;
 		/* Dual battery */
 	case POWER_SUPPLY_PROP_status_smb:
