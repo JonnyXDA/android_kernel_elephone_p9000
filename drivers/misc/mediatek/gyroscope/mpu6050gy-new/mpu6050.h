@@ -3,7 +3,7 @@
 
 #include <linux/ioctl.h>
 
-//#define MPU6050_ACCESS_BY_GSE_I2C
+#define MPU6050_ACCESS_BY_GSE_I2C
 
 #ifdef MPU6050_ACCESS_BY_GSE_I2C
 #define MPU6050_I2C_SLAVE_ADDR		(0xD2)	/* mtk i2c not allow to probe two same address */
@@ -66,7 +66,7 @@
 #define MPU6050_FIFO_RST			0x40	/* reset FIFO function */
 
 #define MPU6050_SLEEP               0x40	/* enable low power sleep mode */
-#define MPU6050_PWRM2_GYRO_DISABLE		0x07
+
 
 #define MPU6050_SUCCESS             0
 #define MPU6050_ERR_I2C             -1
@@ -82,9 +82,8 @@
 /* 180*131/PI = 7506 */
 #define DEGREE_TO_RAD	7506
 
-extern int MPU6050_accel_power(void);
-extern int MPU6050_accel_mode(void);
-extern int MPU6050_pedo_mode(void);
+extern int MPU6050_gse_power(void);
+extern int MPU6050_gse_mode(void);
 #ifdef MPU6050_ACCESS_BY_GSE_I2C
 extern int MPU6050_hwmsen_read_block(u8 addr, u8 *buf, u8 len);
 extern int MPU6050_hwmsen_write_block(u8 addr, u8 *buf, u8 len);
