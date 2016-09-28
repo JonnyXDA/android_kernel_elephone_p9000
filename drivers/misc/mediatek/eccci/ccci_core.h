@@ -576,7 +576,7 @@ struct ccci_port {
 struct ccci_modem_cfg {
 	unsigned int load_type;
 	unsigned int load_type_saving;
-	volatile unsigned int setting;
+	unsigned int setting;
 };
 #define MD_SETTING_ENABLE (1<<0)
 #define MD_SETTING_RELOAD (1<<1)
@@ -691,7 +691,6 @@ typedef enum {
 	CCCI_MESSAGE,
 	CCIF_INTERRUPT,
 	CCIF_INTR_SEQ,
-	CCIF_MPU_INTR,
 } MD_COMM_TYPE;
 
 typedef enum {
