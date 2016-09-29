@@ -17,7 +17,7 @@
 #include "extd_multi_control.h"
 #include "disp_drv_platform.h"
 #include "mt6755/external_display.h"
-#include "extd_platform.h"
+#include "mt6755/extd_platform.h"
 #include "extd_log.h"
 #include "mtk_ovl.h"
 
