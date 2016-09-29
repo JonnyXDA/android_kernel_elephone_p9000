@@ -16,7 +16,7 @@
 #include <mt-plat/mt_gpio_core.h>
 #include "mt_gpio_base.h"
 /* autogen */
-#include <gpio_cfg.h>
+#include "gpio_cfg.h"
 #ifdef CONFIG_OF
 #include <linux/of_address.h>
 #endif
