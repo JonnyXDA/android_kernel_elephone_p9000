@@ -22,9 +22,9 @@
 #include <linux/wait.h>
 #include <mach/irqs.h>
 #include <linux/types.h>
-#include "disp_drv_log.h"
-#include "disp_drv_platform.h"
-#include "mtkfb.h"
+#include "../videox/disp_drv_log.h"
+#include "../videox/disp_drv_platform.h"
+#include "../../include/mtkfb.h"
 #include "ddp_drv.h"
 #include "ddp_manager.h"
 #include "ddp_dump.h"
@@ -32,13 +32,13 @@
 #include "ddp_dsi.h"
 #include "ddp_log.h"
 #include "ddp_mmp.h"
-#include "disp_helper.h"
+#include "../videox/disp_helper.h"
 #include "ddp_reg.h"
-#include "debug.h"
+#include "../videox/debug.h"
 #ifdef CONFIG_MTK_LEGACY
 #include <mt-plat/mt_gpio.h>
 #else
-#include "disp_dts_gpio.h"
+#include "../videox/disp_dts_gpio.h"
 #endif
 #include <mt-plat/sync_write.h>
 #ifndef CONFIG_MTK_CLKMGR
