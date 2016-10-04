@@ -13,7 +13,7 @@
 
 #include "mtk-phy.h"
 #ifdef CONFIG_U3D_HAL_SUPPORT
-#include "mu3d_hal_osal.h"
+#include "../mu3d/hal/mu3d_hal_osal.h"
 #endif
 
 #ifdef CONFIG_U3_PHY_AHB_SUPPORT

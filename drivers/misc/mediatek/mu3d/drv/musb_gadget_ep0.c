@@ -42,9 +42,9 @@
 #include <linux/interrupt.h>
 
 #include "musb_core.h"
-#include "mu3d_hal_osal.h"
-#include "mu3d_hal_usb_drv.h"
-#include "mu3d_hal_hw.h"
+#include "../hal/mu3d_hal_osal.h"
+#include "../hal/mu3d_hal_usb_drv.h"
+#include "../hal/mu3d_hal_hw.h"
 
 /* ep0 is always musb->endpoints[0].ep_in */
 #define	next_ep0_request(musb)	next_in_request(&(musb)->endpoints[0])

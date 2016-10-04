@@ -28,7 +28,7 @@
 #include "mtk-phy-a60810.h"
 #endif
 #ifdef CONFIG_PROJECT_PHY
-#include "mtk-phy-asic.h"
+#include "mt6755/mtk-phy-asic.h"
 #endif
 
 #ifdef CONFIG_C60802_SUPPORT

@@ -11,7 +11,7 @@
  * GNU General Public License for more details.
  */
 
-#include "mtk-phy.h"
+#include "../mtk-phy.h"
 
 #ifdef CONFIG_PROJECT_PHY
 /*#include <mach/mt_pm_ldo.h>*/
@@ -23,9 +23,9 @@
 #endif
 #include <asm/io.h>
 #include "mtk-phy-asic.h"
-#include "mu3d_hal_osal.h"
+#include "../../mu3d/hal/mu3d_hal_osal.h"
 #ifdef CONFIG_MTK_UART_USB_SWITCH
-#include "mu3d_hal_usb_drv.h"
+#include "../../mu3d/hal/mu3d_hal_usb_drv.h"
 #endif
 
 #ifdef FOR_BRING_UP

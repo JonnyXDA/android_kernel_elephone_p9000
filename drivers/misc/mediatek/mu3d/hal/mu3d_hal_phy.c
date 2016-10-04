@@ -14,7 +14,7 @@
 #include "mu3d_hal_osal.h"
 #include "mu3d_hal_phy.h"
 #include "mu3d_hal_usb_drv.h"
-#include "mtk-phy.h"
+#include "../../mu3phy/mtk-phy.h"
 
 /**
  * mu3d_hal_phy_scan - u3 phy clock phase scan

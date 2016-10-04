@@ -33,8 +33,8 @@
 #endif				/* defined(CONFIG_MTK_LEGACY) && !defined(CONFIG_MTK_FPGA)*/
 
 #include <linux/delay.h>
-#include "include/mtk_uart.h"
-#include "include/mtk_uart_intf.h"
+#include "../include/mtk_uart.h"
+#include "../include/mtk_uart_intf.h"
 #include <linux/of_irq.h>
 #include <linux/of_address.h>
 #include <mt-plat/mt_lpae.h>

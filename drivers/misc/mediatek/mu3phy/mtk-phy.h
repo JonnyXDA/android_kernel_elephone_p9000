@@ -16,7 +16,7 @@
 
 #define CONFIG_U3D_HAL_SUPPORT
 #ifdef CONFIG_U3D_HAL_SUPPORT
-#include "mu3d_hal_hw.h"
+#include "../mu3d/hal/mu3d_hal_hw.h"
 #endif
 #ifdef CONFIG_U3D_HAL_SUPPORT
 #define REF_CK U3D_PHY_REF_CK

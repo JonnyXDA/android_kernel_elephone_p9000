@@ -14,10 +14,10 @@
 #ifndef _PRIMARY_DISPLAY_H_
 #define _PRIMARY_DISPLAY_H_
 
-#include "ddp_hal.h"
-#include "ddp_manager.h"
+#include "../dispsys/ddp_hal.h"
+#include "../dispsys/ddp_manager.h"
 #include <linux/types.h>
-#include "disp_session.h"
+#include "../../include/disp_session.h"
 #include "disp_lcm.h"
 #include "disp_helper.h"
 typedef enum {

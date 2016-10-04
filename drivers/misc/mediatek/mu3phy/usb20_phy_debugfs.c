@@ -4,7 +4,7 @@
 #include <linux/debugfs.h>
 #include <linux/seq_file.h>
 #include <asm/uaccess.h>
-#include "musb_core.h"
+#include "../mu3d/drv/musb_core.h"
 #include "mtk-phy.h"
 #define USBPHY_READ8(offset)					U3PhyReadReg8((u3phy_addr_t)u3_sif2_base+0x800+offset)
 #define USBPHY_WRITE8(offset, value)	U3PhyWriteReg8((u3phy_addr_t)u3_sif2_base+0x800+offset, value)

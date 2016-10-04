@@ -27,9 +27,9 @@
 
 #include "musb_core.h"
 #include "ssusb_qmu.h"
-#include "mu3d_hal_osal.h"
-#include "mu3d_hal_phy.h"
-#include "mu3d_hal_usb_drv.h"
+#include "../hal/mu3d_hal_osal.h"
+#include "../hal/mu3d_hal_phy.h"
+#include "../hal/mu3d_hal_usb_drv.h"
 #include "musb_gadget.h"
 
 #ifdef CONFIG_PROJECT_PHY
