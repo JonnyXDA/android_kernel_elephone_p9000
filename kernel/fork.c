@@ -2020,6 +2020,11 @@ SYSCALL_DEFINE1(unshare, unsigned long, unshare_flags)
         if (unshare_flags & CLONE_SIGHAND)		
                 unshare_flags |= CLONE_THREAD;
 	/*
+	 * If unsharing a signal handlers, must also unshare the signal queues.
+	 */
+	if (unshare_flags & CLONE_SIGHAND)
+		unshare_flags |= CLONE_THREAD;
+	/*
 	 * If unsharing namespace, must also unshare filesystem information.
 	 */
 	if (unshare_flags & CLONE_NEWNS)

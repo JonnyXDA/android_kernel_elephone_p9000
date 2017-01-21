@@ -1218,6 +1218,48 @@ static struct drm_dp_mst_branch *drm_dp_get_mst_branch_device_by_guid(
 	return mstb;
 }
 
+static struct drm_dp_mst_branch *get_mst_branch_device_by_guid_helper(
+	struct drm_dp_mst_branch *mstb,
+	uint8_t *guid)
+{
+	struct drm_dp_mst_branch *found_mstb;
+	struct drm_dp_mst_port *port;
+
+	if (memcmp(mstb->guid, guid, 16) == 0)
+		return mstb;
+
+
+	list_for_each_entry(port, &mstb->ports, next) {
+		if (!port->mstb)
+			continue;
+
+		found_mstb = get_mst_branch_device_by_guid_helper(port->mstb, guid);
+
+		if (found_mstb)
+			return found_mstb;
+	}
+
+	return NULL;
+}
+
+static struct drm_dp_mst_branch *drm_dp_get_mst_branch_device_by_guid(
+	struct drm_dp_mst_topology_mgr *mgr,
+	uint8_t *guid)
+{
+	struct drm_dp_mst_branch *mstb;
+
+	/* find the port by iterating down */
+	mutex_lock(&mgr->lock);
+
+	mstb = get_mst_branch_device_by_guid_helper(mgr->mst_primary, guid);
+
+	if (mstb)
+		kref_get(&mstb->kref);
+
+	mutex_unlock(&mgr->lock);
+	return mstb;
+}
+
 static void drm_dp_check_and_send_link_address(struct drm_dp_mst_topology_mgr *mgr,
 					       struct drm_dp_mst_branch *mstb)
 {

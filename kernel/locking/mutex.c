@@ -516,6 +516,12 @@ __mutex_lock_common(struct mutex *lock, long state, unsigned int subclass,
 			return -EALREADY;
 	}
 
+	if (use_ww_ctx) {
+		struct ww_mutex *ww = container_of(lock, struct ww_mutex, base);
+		if (unlikely(ww_ctx == READ_ONCE(ww->ctx)))
+			return -EALREADY;
+	}
+
 	preempt_disable();
 	mutex_acquire_nest(&lock->dep_map, subclass, 0, nest_lock, ip);
 
