@@ -779,7 +779,6 @@ void select_charging_current_bcct(void)
 			g_temp_CC_value = CHARGE_CURRENT_550_00_MA;
 		else
 			g_temp_CC_value = g_bcct_value * 100;
-
 		if (g_bcct_value < 650)
 			g_temp_CC_value = CHARGE_CURRENT_550_00_MA;
 		else if (g_bcct_value < 750)
@@ -832,7 +831,6 @@ void select_charging_current_bcct(void)
 			g_temp_CC_value = CHARGE_CURRENT_2950_00_MA;
 		else
 			g_temp_CC_value = CHARGE_CURRENT_650_00_MA;
-
 	} else {
 		g_temp_CC_value = CHARGE_CURRENT_500_00_MA;
 	}
@@ -1327,3 +1325,4 @@ void mt_battery_charging_algorithm(void)
 
 	battery_charging_control(CHARGING_CMD_DUMP_REGISTER, NULL);
 }
+
